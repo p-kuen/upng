@@ -1,16 +1,70 @@
-# UPNG.js
-A small, fast and advanced PNG / APNG encoder and decoder. It is the main PNG engine for [Photopea image editor](https://www.photopea.com).
-
-* [Examples of PNGs minified by UPNG.js](https://blog.photopea.com/png-minifier-inside-photopea.html#examples)
-* [Try UPNG.js in Photopea](https://www.photopea.com) - open an image and press File - Save for web, play with the Quality
-* [UPNG.Photopea.com](http://upng.photopea.com) - a separate minifier app, that uses UPNG.js
-* Support us by [making a donation](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=ivan%40kuckir%2ecom&lc=CZ&item_name=UPNG%2ejs&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted).
-
 Download and include the `UPNG.js` file in your code, or get it from NPM:
 
 ```sh
 npm install upng-js
 ```
+
+<h1>
+  upng
+
+  <br />
+
+  <!-- NPM Version -->
+  <a href="https://www.npmjs.com/package/@pdf-lib/upng">
+    <img
+      src="https://img.shields.io/npm/v/png-ts.svg?style=flat-square"
+      alt="NPM Version"
+    />
+  </a>
+</h1>
+
+> A small, fast and advanced PNG / APNG encoder and decoder
+
+This project is a fork of [`UPNG.js`](https://github.com/photopea/UPNG.js) and was created for use in [`pdf-lib`](https://github.com/Hopding/pdf-lib). The maintainer of the original repo does not publish it to NPM. That is the primary purpose of this fork. In addition, an `index.d.ts` file has been added (copied directly from [`@types/upng-js`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/upng-js/index.d.ts) to makes TypeScript defintions available without installing additional packages.
+
+## Example of `UPNG.toRGBA8`
+```javascript
+// Import the UPNG class
+import UPNG from '@pdf-lib/upng';
+
+// Create a UPNG object
+const pngImage = UPNG.decode(/* Uint8Array containing bytes of PNG image */);
+
+// `pixels` is a 1D array (in rgba order) of decoded pixel data
+const pixels = pngImage.UPNG.toRGBA8();
+```
+
+## Installation
+### NPM Module
+To install the latest stable version:
+```bash
+# With npm
+npm install --save @pdf-lib/upng
+
+# With yarn
+yarn add @pdf-lib/upng
+```
+This assumes you're using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/lang/en/) as your package manager.
+
+### UMD Module
+You can also download `@pdf-lib/upng` as a UMD module from [unpkg](https://unpkg.com/#/). The UMD builds have been compiled to ES5, so they should work [in any modern browser](https://caniuse.com/#feat=es5). UMD builds are useful if you aren't using a package manager or module bundler. For example, you can use them directly in the `<script>` tag of an HTML page.
+
+The following builds are available:
+
+* https://unpkg.com/@pdf-lib/upng/dist/UPNG.js
+* https://unpkg.com/@pdf-lib/upng/dist/UPNG.min.js
+
+When using a UMD build, you will have access to a global `window.UPNG` variable. This variable contains the `UPNG` class exported by `@pdf-lib/upng`. For example:
+
+```javascript
+// NPM module
+import UPNG from '@pdf-lib/upng';
+const pngImage = UPNG.decode(/* ... */)
+
+// UMD module
+var pngImage = window.UPNG.decode(/* ... */)
+```
+
 
 ## Encoder
 
