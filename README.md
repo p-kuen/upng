@@ -1,9 +1,3 @@
-Download and include the `UPNG.js` file in your code, or get it from NPM:
-
-```sh
-npm install upng-js
-```
-
 <h1>
   upng
 
