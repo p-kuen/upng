@@ -1,7 +1,7 @@
 {
   "name": "@pdf-lib/upng",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Small, fast and advanced PNG / APNG encoder and decoder",
   "main": "cjs/UPNG.js",
   "unpkg": "dist/UPNG.min.js",
@@ -11,6 +11,7 @@
     "cjs/",
     "dist/",
     "UPNG.js",
+    "index.d.ts",
     "LICENSE.md",
     "package.json",
     "README.md",
