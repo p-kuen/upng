@@ -17,7 +17,7 @@
     "yarn.lock"
   ],
   "scripts": {
-    "build": "yarn build:cjs && build:umd && build:umd:min",
+    "build": "yarn build:cjs && yarn build:umd && yarn build:umd:min",
     "build:cjs": "babel --plugins @babel/plugin-transform-modules-commonjs --out-dir cjs UPNG.js",
     "build:umd": "rollup --config rollup.config.js --file dist/UPNG.js",
     "build:umd:min": "rollup --config rollup.config.js --file dist/UPNG.min.js --environment MINIFY"
@@ -42,7 +42,12 @@
     "pako": "^1.0.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
     "@babel/plugin-transform-modules-commonjs": "^7.8.3",
-    "babel-cli": "^6.26.0"
+    "@rollup/plugin-commonjs": "^11.0.0",
+    "@rollup/plugin-node-resolve": "^7.1.1",
+    "rollup": "^1.31.1",
+    "rollup-plugin-terser": "^5.1.3"
   }
 }
