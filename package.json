@@ -1,18 +1,37 @@
 {
-  "name": "upng-js",
+  "name": "@pdf-lib/upng",
+  "license": "MIT",
+  "version": "1.0.0",
   "description": "Small, fast and advanced PNG / APNG encoder and decoder",
-  "version": "2.1.0",
-  "homepage": "https://github.com/photopea/UPNG.js",
+  "main": "cjs/UPNG.js",
+  "unpkg": "dist/UPNG.min.js",
+  "module": "UPNG.js",
+  "types": "index.d.ts",
+  "files": [
+    "cjs/",
+    "dist/",
+    "UPNG.js",
+    "LICENSE.md",
+    "package.json",
+    "README.md",
+    "yarn.lock"
+  ],
+  "scripts": {
+    "build": "yarn build:cjs && build:umd && build:umd:min",
+    "build:cjs": "babel --plugins @babel/plugin-transform-modules-commonjs --out-dir cjs UPNG.js",
+    "build:umd": "rollup --config rollup.config.js --file dist/UPNG.js",
+    "build:umd:min": "rollup --config rollup.config.js --file dist/UPNG.min.js --environment MINIFY"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hopding/upng"
+  },
   "author": "photopea (https://github.com/photopea)",
   "contributors": [
+    "Andrew Dillon (https://github.com/Hopding)",
     "Scimonster (https://github.com/Scimonster)"
   ],
-  "license": "MIT",
-  "repository": "github:photopea/UPNG.js",
-  "bugs": {
-    "url": "https://github.com/photopea/UPNG.js/issues"
-  },
-  "main": "UPNG",
+  "bugs": "https://github.com/Hopding/upng/issues",
   "keywords": [
     "png",
     "apng",
@@ -21,5 +40,9 @@
   ],
   "dependencies": {
     "pako": "^1.0.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "babel-cli": "^6.26.0"
   }
 }

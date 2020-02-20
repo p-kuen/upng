@@ -1,3 +1,4 @@
+import pako from 'pako';
 
 var UPNG = {};
 
@@ -1021,3 +1022,6 @@ UPNG.encode.concatRGBA = function(bufs) {
 	}
 	return nimg.buffer;
 }
+
+export default UPNG;
+
