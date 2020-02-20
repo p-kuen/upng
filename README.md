@@ -14,7 +14,7 @@
 
 > A small, fast and advanced PNG / APNG encoder and decoder
 
-This project is a fork of [`UPNG.js`](https://github.com/photopea/UPNG.js) and was created for use in [`pdf-lib`](https://github.com/Hopding/pdf-lib). The maintainer of the original repo does not publish it to NPM. That is the primary purpose of this fork. In addition, an `index.d.ts` file has been added (copied directly from [`@types/upng-js`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/upng-js/index.d.ts) to makes TypeScript defintions available without installing additional packages.
+This project is a fork of [`UPNG.js`](https://github.com/photopea/UPNG.js) and was created for use in [`pdf-lib`](https://github.com/Hopding/pdf-lib). The maintainer of the original repo does not publish it to NPM. That is the primary purpose of this fork. In addition, an `index.d.ts` file has been added (copied directly from [`@types/upng-js`](https://github.com/DefinitelyTyped/DefinitelyTyped/blob/master/types/upng-js/index.d.ts)) to makes TypeScript definitions available without requiring additional packages to be installed.
 
 ## Example of `UPNG.toRGBA8`
 ```javascript
