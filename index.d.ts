@@ -63,7 +63,7 @@ export interface QuantizeResult {
   plte: any[];
 }
 
-namespace UPNG {
+declare namespace UPNG {
   export function encode(
     imgs: ArrayBuffer[],
     w: number,
