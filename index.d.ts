@@ -63,26 +63,30 @@ export interface QuantizeResult {
   plte: any[];
 }
 
-export function encode(
-  imgs: ArrayBuffer[],
-  w: number,
-  h: number,
-  cnum: number,
-  dels?: number[],
-): ArrayBuffer;
+namespace UPNG {
+  export function encode(
+    imgs: ArrayBuffer[],
+    w: number,
+    h: number,
+    cnum: number,
+    dels?: number[]
+  ): ArrayBuffer;
 
-export function encodeLL(
-  imgs: ArrayBuffer[],
-  w: number,
-  h: number,
-  cc: number,
-  ac: number,
-  depth: number,
-  dels?: number[],
-): ArrayBuffer;
+  export function encodeLL(
+    imgs: ArrayBuffer[],
+    w: number,
+    h: number,
+    cc: number,
+    ac: number,
+    depth: number,
+    dels?: number[]
+  ): ArrayBuffer;
 
-export function decode(buffer: ArrayBuffer): Image;
+  export function decode(buffer: ArrayBuffer): Image;
 
-export function toRGBA8(out: Image): ArrayBuffer[];
+  export function toRGBA8(out: Image): ArrayBuffer[];
 
-export function quantize(data: ArrayBuffer, psize: number): QuantizeResult;
+  export function quantize(data: ArrayBuffer, psize: number): QuantizeResult;
+}
+
+export default UPNG;
