@@ -6,7 +6,9 @@
   "main": "cjs/UPNG.js",
   "unpkg": "dist/UPNG.min.js",
   "module": "UPNG.js",
+  "exports": ["./dist/UPNG.esm.js", "./index.d.ts"],
   "types": "index.d.ts",
+  "type": "module",
   "files": [
     "cjs/",
     "dist/",
@@ -18,10 +20,12 @@
     "yarn.lock"
   ],
   "scripts": {
-    "build": "yarn build:cjs && yarn build:umd && yarn build:umd:min",
+    "build": "yarn build:cjs && yarn build:umd && yarn build:umd:min && yarn build:esm && yarn build:esm:min",
     "build:cjs": "babel --plugins @babel/plugin-transform-modules-commonjs --out-dir cjs UPNG.js",
     "build:umd": "rollup --config rollup.config.js --file dist/UPNG.js",
-    "build:umd:min": "rollup --config rollup.config.js --file dist/UPNG.min.js --environment MINIFY"
+    "build:umd:min": "rollup --config rollup.config.js --file dist/UPNG.min.js --environment MINIFY,MODULE_TYPE:umd",
+    "build:esm": "rollup --config rollup.config.js --file dist/UPNG.esm.js --environment MODULE_TYPE:es",
+    "build:esm:min": "rollup --config rollup.config.js --file dist/UPNG.esm.min.js --environment MINIFY,MODULE_TYPE:es"
   },
   "repository": {
     "type": "git",
