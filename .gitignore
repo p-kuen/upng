@@ -4,3 +4,4 @@ es
 cjs
 *.zip
 yarn-error.log
+.yarn
